@@ -1,0 +1,143 @@
+import random
+insults = ["Looser","Fissadi","HaaraHua"]
+ins = random.choice(insults)
+
+print("-----------Welcome to the Game Rock, Paper, Scissor---------")
+n = int(input("Enter how many times you want to play:"))
+name1 =input("player1 enter your name:").capitalize()
+name2 =input("player2 Enter your name:").capitalize()
+
+p1,p2,d1 = 0,0,0
+n1 = roller()
+print()
+n2 =roller()
+
+for i in range(n):
+    if n1 > n2 :
+        user1 = input(f"{name1} Enter your choice  \nRock/ Paper/Scissor:").lower()
+        if user1 == 'rock' or user1 == 'paper' or user1 == 'scissor' :
+            user1 = user1
+        else: print("invalid input: ")
+        user2 = input(f"{name2} Enter your choice  \nRock/ Paper/Scissor:").lower()
+        if user2 == 'rock' or user2 == 'paper' or user2 == 'scissor' :
+            user2 = user2
+        else: print("invalid input: ")
+    
+    elif n2 == n1:
+        user1 = input(f"{name1} Enter your choice  \nRock/ Paper/Scissor:").lower()
+        if user1 == 'rock' or user1 == 'paper' or user1 == 'scissor' :
+            user1 = user1
+        else: print("invalid input: ")
+        user2 = input(f"{name2} Enter your choice  \nRock/ Paper/Scissor:").lower()
+        if user2 == 'rock' or user2 == 'paper' or user2 == 'scissor' :
+            user2 = user2
+        else: print("invalid input: ")
+    else:
+        user2 = input(f"{name2} Enter your choice  \nRock/ Paper/Scissor:").lower()
+        if user2 == 'rock' or user2 == 'paper' or user2 == 'scissor' :
+            user2 = user2
+        else: print("invalid input: ")
+        user1 = input(f"{name1} Enter your choice  \nRock/ Paper/Scissor:").lower()
+        if user1 == 'rock' or user1 == 'paper' or user1 == 'scissor' :
+            user1 = user1
+        else: print("invalid input: ")
+    
+    if user1 == 'rock' and user2 == 'paper':
+        print("-------------------------------")
+        print("winner:", name2)
+        p2+=1
+    
+    elif user1 == 'scissor' and user2 == 'rock':
+        print("-------------------------------")
+        print("Winner:", user2)
+        p2+= 1
+    elif user1 == 'paper' and user2 == 'scissor':
+        print("-------------------------------")
+        print("Winner:", name2)
+        p2+= 1
+    elif user1 == 'paper' and user2 == 'rock':
+        print("-------------------------------")
+        print("Winner:", name1)
+        p1+= 1
+    elif user1 == 'rock' and user2 == 'scissor':
+        print("-------------------------------")
+        print("Winner:", name1)
+        p1+= 1
+    elif user1 == 'scissor' and user2 == 'paper':
+        print("-------------------------------")
+        print("Winner:", name1)
+        p1 += 1
+    elif user1 == user2:
+        print("-------------------------------")
+        print("Draw")
+        d1 += 1 
+    else:
+        ("Enter valid input---")
+print("-------------------------------")
+print(f"{name1}: ",p1,f"{name2}: ",p2 , "Draw",d1)
+print("-------------------------------")
+if p1>p2:
+    print(f"{name1} is the winner")
+    print(f"{name2} is {ins}")
+elif(p1==p2):
+    print("Game is draw")
+else:
+    print(f"{name2} is the winner:",p2)
+    print(f"{name1} is {ins}",p1)
+
+
+
+
+
+
+def roller():
+    num = random.randint(1, 6)
+    print(num)
+    if num == 1:
+        print("[-----]")
+        print("[     ]")
+        print("[  0  ]")
+        print("[     ]")
+        print("[-----]")
+        return num
+    elif num == 2:
+        print("[-----]")
+        print("[ 0    ]")
+        print("[     ]")
+        print("[    0]")
+        print("[-----]")
+        return num
+    elif num == 3:
+        print("[-----]")
+        print("[     ]")
+        print("[0 0 0]")
+        print("[     ]")
+        print("[-----]")
+        return num
+    elif num == 4:
+        print("[-----]")
+        print("[0  0 ]")
+        print("[     ]")
+        print("[0  0 ]")
+        print("[-----]")
+        return num
+    elif num == 5:
+        print("[-----]")
+        print("[0  0 ]")
+        print("[  0  ]")
+        print("[0  0 ]")
+        print("[-----]")
+        return num
+    elif num == 6:
+        print("[-----]")
+        print("[0 0 0]")
+        print("[     ]")
+        print("[0 0 0]")
+        print("[-----]")
+        return num
+    else:
+        print("Error Occured")
+
+
+
+
